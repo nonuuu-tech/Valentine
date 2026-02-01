@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For You 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #fff1f8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card {
+      background: white;
+      width: 320px;
+      padding: 30px 20px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .emoji {
+      font-size: 60px;
+    }
+
+    h2 {
+      margin: 20px 0;
+      font-size: 20px;
+      color: #222;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #ff4d79;
+      color: white;
+      font-weight: 600;
+    }
+
+    #no {
+      position: absolute;
+      left: 0;
+      background: #eee;
+      color: #333;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="emoji">🐱💖</div>
+    <h2>harshit, will you be my valentine?</h2>
+
+    <div class="buttons">
+      <button id="no">No</button>
+      <button id="yes">Yes</button>
+    </div>
+
+    <div class="note">some questions deserve only one answer ✨</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    function moveNo() {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 60 - 30;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    noBtn.addEventListener("mouseover", moveNo);
+    noBtn.addEventListener("click", moveNo);
+
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "yes.html";
+    });
+  </script>
+</body>
+</html>
